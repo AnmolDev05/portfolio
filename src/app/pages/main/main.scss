@@ -32,3 +32,24 @@
     .project-desc { width: 100%; }
   }
 }
+.social-links {
+  display: flex;
+  justify-content: space-between;
+  max-width: 15.625rem; // 250px
+  margin-top: 4rem;     // 80px
+}
+
+.social-links a {
+  display: inline-block;
+}
+
+.social-icon {
+  width: 2.5rem;        // 40px
+  height: auto;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.2); // increase size on hover
+  }
+}
+
