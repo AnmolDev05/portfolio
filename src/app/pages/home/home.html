@@ -1,0 +1,71 @@
+<div id="smooth-wrapper">
+  <header class="header">
+    <div class="logo">Anmol Sharma</div>
+    <!-- <a href="#" class="nav-btn">
+      <svg class="nav-btn__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 30">
+        <rect class="nav-rect" width="40" height="2" x="8" y="8" fill="#242423" />
+        <rect class="nav-rect" width="40" height="2" x="8" y="14" fill="#242423" />
+        <rect width="40" height="2" x="8" y="20" fill="#242423" />
+      </svg>
+    </a> -->
+  </header>
+  <div class="stage" id="smooth-content">
+    <section class="intro slide--0" id="slide-0" style="height:100vh; position:relative;">
+      <app-matrix-background></app-matrix-background>
+      <div class="overlay" style="z-index: 1;"></div>
+      <div class="intro__content">
+        <h1 class="intro__title">Front-End <br> Developer</h1>
+        <p class="intro__txt">
+          Hey, I’m Anmol, a Front-End Developer passionate about building interactive, responsive web experiences with
+          Angular.
+        </p>
+      </div>
+      <img class="intro__img intro__img--1" src="../../../assets/images/angular.svg" />
+      <img class="intro__img intro__img--2" src="../../../assets/images/react.svg" />
+      <div class="scroll_down_div">
+        Scroll Down
+          <div class="scroll-down">
+        <span></span>
+      </div>
+      </div>
+    </section>
+
+    <!-- Dynamic Slides -->
+    <!-- <section *ngFor="let slide of slides; let i = index" [id]="'slide-' + (i + 1)"
+      [ngClass]="'slide slide--' + (i + 1)">
+
+      <div class="col col--1">
+        <div class="col__content" [ngClass]="'col__content--' + slide.bg">
+          <h2 class="col__content-title">
+            <span class="line__inner">{{ slide.title1 }}</span><br>
+            <span class="line__inner">{{ slide.title2 }}</span>
+          </h2>
+          <div class="col__content-wrap">
+            <p class="col__content-txt">{{ slide.text }}</p>
+            <a href="#" class="slide-link">
+              <div class="slide-link__circ"></div>
+              <div class="slide-link__line"></div>
+            </a>
+          </div>
+        </div>
+
+        <a *ngIf="i < slides.length - 1" [href]="'#slide-' + (i + 2)" class="slide__scroll-link">
+          <div class="slide__scroll-line"></div>
+        </a>
+      </div>
+
+      <div class="col col--2">
+        <div class="col__image-wrap">
+          <img class="img" [src]="slide.img" />
+        </div>
+      </div>
+    </section> -->
+    <footer class="footer" [id]="'slide-' + (slides.length + 1)">
+      <a class="footer__link-top" href="#slide-0">Top
+        <span class="footer__link-top-line"></span>
+      </a>
+      <p class="footer__copyright">© 2025 Anmol Sharma. All rights reserved.</p>
+    </footer>
+
+  </div>
+</div>
