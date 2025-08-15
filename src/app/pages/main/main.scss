@@ -245,4 +245,76 @@
 }
 
 
+.macbook-frame {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  .macbook-img {
+    width: 100%;
+    max-width: 400px; // original desktop size
+    display: block;
+    height: auto;
+  }
+
+  .screen-content {
+ position: absolute;
+    top: 10.5%;
+    left: 10%;
+    width: 80%;
+    height: 79%;
+    border-radius: 5px;
+    overflow: auto;
+    scroll-behavior: smooth;
+    cursor: all-scroll;
+    scrollbar-width: none;
+
+    /* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Hide scrollbar for Firefox */
+    scrollbar-width: none;
+
+    /* Hide scrollbar for IE, Edge */
+    -ms-overflow-style: none;
+
+    img {
+      width: 100%;
+      display: block;
+      height: auto; // maintain aspect ratio
+    }
+  }
+}
+
+/* Responsive tweaks */
+@media (max-width: 767px) {
+  .macbook-frame {
+    .macbook-img {
+      max-width: 300px;
+    }
+
+    .screen-content {
+      top: 7%;
+      left: 9%;
+      width: 82%;
+      height: 46%;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .macbook-frame {
+    .macbook-img {
+      max-width: 220px;
+    }
+
+    .screen-content {
+      top: 6%;
+      left: 8%;
+      width: 84%;
+      height: 45%;
+    }
+  }
+}
 
