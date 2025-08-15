@@ -33,7 +33,7 @@ export class Main {
   @ViewChild('scrollContainer') scrollContainer!: ElementRef<HTMLDivElement>;
 
   activeSection = 'section-about';
-  isLight = false;
+  isLight : any = false;
 
   ngOnInit(): void {
     const saved = localStorage.getItem('theme');
