@@ -1,0 +1,248 @@
+// .container {
+//   width: 100%;
+//   height: 100vh;
+//   display: flex;
+//   z-index: 50;
+//   position: absolute;
+// }
+
+
+// .menu {
+//   width: 45%;
+//   color: #fff;
+// }
+
+// .menu p {
+//   position: relative;
+//   padding: 10px 10px 10px 18px; /* initial small space for dash */
+//   cursor: pointer;
+//   transition: color 0.3s, padding-left 0.3s ease; /* animate padding too */
+// }
+
+// /* Dash in front */
+// .menu p::before {
+//   content: "";
+//   position: absolute;
+//   left: 0;
+//   top: 50%;
+//   transform: translateY(-50%);
+//   height: 2px;
+//   width: 10px; /* small dash initially */
+//   background-color: currentColor;
+//   transition: width 0.3s ease;
+// }
+
+// /* On hover or active: dash grows and text moves right */
+// .menu p:hover,
+// .menu p.active {
+//   padding-left: 30px; /* push text further */
+// }
+
+// .menu p:hover::before,
+// .menu p.active::before {
+//   width: 20px;
+// }
+
+// .menu p.active {
+//   color: #fff;
+//   font-weight: bold;
+// }
+
+
+// .heading1{
+//     font-size: 55px;
+//     font-weight: 500;
+//     margin-bottom: 10px;
+// }
+
+
+// .heading2{
+//     font-size:22px;
+//     font-weight:500;
+//     margin-bottom: 10px;
+// }
+
+// .heading3{
+//     font-size:16px;
+//     font-weight:300;
+//     margin-bottom: 20px;
+// }
+
+
+// .content {
+//   width: 55%;
+//   height: 100%;
+//   overflow-y: auto;
+//   color: aliceblue;
+//   scroll-behavior: smooth;
+// }
+
+// .section {
+//     height: 600px;
+//     margin-bottom: 10px;
+//     font-size: 16px;
+//     font-weight: 300;
+//     padding: 80px 100px 0px 80px;
+//     text-align: justify;
+// }
+
+// .overlay {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     background-color: rgba(0, 0, 0, 0.5);
+//     /* semi-transparent dark overlay */
+//     z-index: 1;
+//     pointer-events: none;
+// }
+
+
+// /* my-component.component.scss */
+// :host ::-webkit-scrollbar {
+//   width: 8px;
+// }
+
+// :host ::-webkit-scrollbar-track {
+//   background: #1e1e1e; /* Dark track */
+// }
+
+// :host ::-webkit-scrollbar-thumb {
+//   background-color: #555; /* Scroll handle */
+//   border-radius: 4px;
+// }
+
+// :host ::-webkit-scrollbar-thumb:hover {
+//   background-color: #888;
+// }
+
+// /* For Firefox */
+// :host {
+//   scrollbar-width: thin;
+//   scrollbar-color: #555 #1e1e1e;
+// }
+
+
+/* styles.css (global) */
+
+// :root {
+//   --bg-color: #000;
+//   --text-color: #fff;
+//   --node-color: rgba(0, 255, 200, 0.9);
+//   --line-color: #00ffcc;
+//   --overlay-color: rgba(0, 0, 0, 0.5);
+//   --scroll-track: #1e1e1e;
+//   --scroll-thumb: #555;
+// }
+
+/* Light theme */
+// :root.light-theme {
+//   --bg-color: #fff;
+//   --text-color: #000;
+//   --node-color: rgba(0, 100, 200, 0.9);
+//   --line-color: #0066cc;
+//   --overlay-color: rgba(255, 255, 255, 0.4);
+//   --scroll-track: #ddd;
+//   --scroll-thumb: #999;
+// }
+
+
+// .menu {
+//   width: 45%;
+//   color: var(--text-color);
+// }
+
+// .content {
+//   color: var(--text-color);
+// }
+
+// .overlay {
+//   background-color: var(--overlay-color);
+// }
+
+// /* Scrollbar */
+// :host ::-webkit-scrollbar-track {
+//   background: var(--scroll-track);
+// }
+// :host ::-webkit-scrollbar-thumb {
+//   background-color: var(--scroll-thumb);
+// }
+
+
+.menu {
+  width: 45%;
+  color: var(--text-color);
+}
+
+.content {
+  color: var(--text-color);
+}
+
+.overlay {
+  background-color: var(--overlay-color);
+}
+
+/* Scrollbar */
+:host ::-webkit-scrollbar-track {
+  background: var(--scroll-track);
+}
+:host ::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-thumb);
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: 1px solid var(--text-color);
+  color: var(--text-color);
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+.theme-toggle:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+}
+
+.experience-card {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 50px;
+  padding: 15px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+  text-align: left;
+  cursor: pointer;
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .exp-date {
+    font-weight: 500;
+  }
+
+  .exp-details {
+    width: 60%;
+
+    .exp-title {
+      font-weight: 500;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .exp-desc {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.5;
+    }
+  }
+}
+
+
+

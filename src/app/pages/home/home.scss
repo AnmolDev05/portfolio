@@ -141,6 +141,7 @@ p {
 @media all and (max-width: 768px) {
     .intro__content {
         right: auto;
+        bottom: 25%;
     }
 }
 
@@ -221,7 +222,7 @@ p {
 }
 
 .slide:nth-of-type(even) {
-    background: #C4CDC4;
+    background: #000;
 }
 
 @media all and (max-width: 768px) {
@@ -283,27 +284,27 @@ p {
 }
 
 .col__content--1 {
-    background: #D8C0C0;
+    background: #000;
 }
 
 .col__content--2 {
-    background: #CDD5E0;
+    background: #000;
 }
 
 .col__content--3 {
-    background: #F3D3B0;
+    background: #000;
 }
 
 .col__content--4 {
-    background: #F8E9E6;
+    background: #000;
 }
 
 .col__content--5 {
-    background: #D1E2EC;
+    background: #000;
 }
 
 .col__content--6 {
-    background: #D7CEC5;
+    background: #000;
 }
 
 @media all and (max-width: 768px) {

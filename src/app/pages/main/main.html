@@ -1,0 +1,103 @@
+<button class="theme-toggle" (click)="toggleTheme()">
+    {{ isLight ? '🌙 Dark' : '☀️ Light' }}
+</button>
+<div class="overlay"></div>
+<!-- <app-matrix-background></app-matrix-background> -->
+<app-circuit-background></app-circuit-background>
+
+<div class="row m-0">
+    <!-- <app-circuit-background></app-circuit-background> -->
+
+    <div class="container">
+        <div class="menu">
+            <div class="col-6" style="padding: 70px 100px;">
+                <div style="margin-bottom: 50px;">
+                    <div class="heading1">Anmol Sharma</div>
+                    <div class="heading2">Front-End Developer</div>
+                    <div class="heading3">
+                        Crafting seamless, accessible, and visually engaging digital experiences.
+                        I blend design precision with clean, performant code to bring ideas to life on the web.
+                    </div>
+                </div>
+
+                <!-- menu items -->
+                <p (click)="scrollTo('section-about')" [class.active]="activeSection === 'section-about'">
+                    About Me
+                </p>
+                <p (click)="scrollTo('section-experience')" [class.active]="activeSection === 'section-experience'">
+                    Experience
+                </p>
+                <p (click)="scrollTo('section-project')" [class.active]="activeSection === 'section-project'">
+                    My Projects
+                </p>
+            </div>
+        </div>
+
+        <div class="content" #scrollContainer (scroll)="onScroll()">
+            <div id="section-about" class="section" style="text-align: left !important;">
+                <p class="mb-4">
+                    I’m Anmol Sharma, a passionate Front-End Developer with over 4 years of experience crafting dynamic,
+                    responsive, and user-friendly web applications. My expertise lies in Angular and modern front-end
+                    technologies, where I combine clean code practices with thoughtful UI/UX to deliver seamless digital
+                    experiences.
+
+                </p>
+                <p class="mb-4">
+                    I thrive in Agile environments, collaborating with designers, backend developers, and stakeholders
+                    to bring ideas to life — from concept to polished, production-ready interfaces. Over the years, I’ve
+                    worked on fintech dashboards, admin panels, and large-scale platforms, always focusing on
+                    performance, accessibility, and maintainability.
+                </p>
+                <p class="mb-4">
+                    Beyond coding, I’m driven by curiosity and a desire to continuously learn and innovate. Whether it’s
+                    optimizing performance with lazy loading, improving accessibility, or experimenting with new
+                    frameworks, I love turning complex problems into intuitive solutions.
+
+                </p>
+                <p class="mb-4">
+                    When I’m not building interfaces, you’ll find me exploring new tech trends, fine-tuning side
+                    projects, or enjoying a good coffee while sketching out my next idea.
+                </p>
+            </div>
+
+            <div id="section-experience" class="section">
+                <!-- Experience 1 -->
+                <div class="experience-card">
+                    <div class="exp-date">Nov 2024 - Present</div>
+                    <div class="exp-details">
+                        <div class="exp-title">Software Engineer L2, ScoreMe, Gurgaon</div>
+                        <div class="exp-desc">
+                            Developing and maintaining Angular components for fintech dashboards, optimizing frontend
+                            performance, and collaborating with UI/UX designers on responsive, user-friendly interfaces.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="exp-date">Apr 2020 - Aug 2023</div>
+                    <div class="exp-details">
+                        <div class="exp-title">Frontend
+                            Developer, Qdesq, Gurgaon</div>
+                        <div class="exp-desc">
+                            Built responsive web pages and Single Page Applications using Angular 9, integrated APIs,
+                            and collaborated with cross-functional teams to deliver high-quality features.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="exp-date">Jan 2020 - Apr 2020</div>
+                    <div class="exp-details">
+                        <div class="exp-title">Frontend
+                            Developer Intern, Qdesq, Gurgaon</div>
+                        <div class="exp-desc">
+                            Built responsive web pages and Single Page Applications using Angular 9, integrated APIs,
+                            and collaborated with cross-functional teams to deliver high-quality features.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="section-project" class="section">Projects</div>
+        </div>
+    </div>
+</div>

@@ -1,1 +1,246 @@
-/* You can add global styles to this file, and also import other style files */
+/* styles.scss */
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+body {
+    font-family: 'Lexend', sans-serif;
+    font-optical-sizing: auto;
+}
+
+// /* my-component.component.scss */
+// :host ::-webkit-scrollbar {
+//   width: 8px;
+// }
+
+// :host ::-webkit-scrollbar-track {
+//   background: #1e1e1e; /* Dark track */
+// }
+
+// :host ::-webkit-scrollbar-thumb {
+//   background-color: #555; /* Scroll handle */
+//   border-radius: 4px;
+// }
+
+// :host ::-webkit-scrollbar-thumb:hover {
+//   background-color: #888;
+// }
+
+// /* For Firefox */
+// :host {
+//   scrollbar-width: thin;
+//   scrollbar-color: #555 #1e1e1e;
+// }
+
+/* src/styles.css */
+
+/* ---------- Theme variables ---------- */
+// :root {
+//   --bg-color: #000000;
+//   --text-color: #ffffff;
+//   --node-color: rgba(0, 255, 200, 0.95);
+//   --line-color: #00ffcc;
+//   --overlay-color: rgba(0, 0, 0, 0.5);
+//   --scroll-track: #1e1e1e;
+//   --scroll-thumb: #555;
+//   --accent: #00ffcc;
+// }
+
+// /* Light theme (applied with html.light-theme) */
+// html.light-theme {
+//   --bg-color: #ffffff;
+//   --text-color: #0b1220;
+//   --node-color: rgba(0, 100, 200, 0.95);
+//   --line-color: #0066cc;
+//   --overlay-color: rgba(255, 255, 255, 0.35);
+//   --scroll-track: #eee;
+//   --scroll-thumb: #999;
+//   --accent: #0066cc;
+// }
+
+/* Dark theme (default) */
+:root {
+    --bg-color: #000;
+    --text-color: #fff;
+    --node-color: rgba(0, 255, 200, 0.9);
+    --line-color: #00ffcc;
+    --overlay-color: rgba(0, 0, 0, 0.5);
+    --scroll-track: #1e1e1e;
+    --scroll-thumb: #555;
+}
+
+/* Light theme */
+:root.light-theme {
+    --bg-color: #fff;
+    --text-color: #000;
+    --node-color: rgba(0, 100, 200, 0.9);
+    --line-color: #0066cc;
+    --overlay-color: rgba(255, 255, 255, 0.6);
+    /* white overlay */
+    --scroll-track: #ddd;
+    --scroll-thumb: #999;
+}
+
+:root {
+    --matrix-bg-color: rgba(0, 0, 0, 0.05);
+    --matrix-letter-color: rgba(166, 0, 255, 1);
+}
+
+.light-theme {
+    --matrix-bg-color: #c0a285;
+    --matrix-letter-color: #FFFFFC;
+}
+
+/* ---------- Base layout ---------- */
+body {
+    margin: 0;
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Your container/menu/content adapted to variables */
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    z-index: 50;
+    position: absolute;
+}
+
+.menu {
+    width: 45%;
+    color: var(--text-color);
+}
+
+.menu p {
+    font-size: 16px;
+    font-weight: 300;
+    position: relative;
+    padding: 10px 10px 10px 18px;
+    cursor: pointer;
+    transition: color 0.3s, padding-left 0.3s ease;
+}
+
+/* Dash in front */
+.menu p::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 2px;
+    width: 10px;
+    background-color: currentColor;
+    transition: width 0.3s ease;
+}
+
+/* On hover or active: dash grows and text moves right */
+.menu p:hover,
+.menu p.active {
+    padding-left: 30px;
+}
+
+.menu p:hover::before,
+.menu p.active::before {
+    width: 20px;
+}
+
+.menu p.active {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.heading1 {
+    font-size: 56px;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+.heading2 {
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.heading3 {
+    font-size: 16px;
+    font-weight: 200;
+    margin-bottom: 20px;
+}
+
+.content {
+    width: 55%;
+    height: 100%;
+    overflow-y: auto;
+    color: var(--text-color);
+    scroll-behavior: smooth;
+}
+
+.section {
+    height: 600px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 80px 100px 0px 80px;
+    text-align: justify;
+    line-height: 28px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--overlay-color);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 200;
+    transition: all 0.18s ease;
+}
+
+.theme-toggle:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+}
+
+/* Global scrollbar (webkit & firefox) */
+*::-webkit-scrollbar {
+    width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--scroll-track);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-thumb);
+    border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: #888;
+}
+
+/* firefox */
+:root {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scroll-thumb) var(--scroll-track);
+}
+
+/* Keep canvas behind everything */
+app-circuit-background canvas {
+    z-index: -1;
+    display: block;
+}

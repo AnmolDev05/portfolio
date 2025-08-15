@@ -1,6 +1,6 @@
 <div id="smooth-wrapper">
   <header class="header">
-    <div class="logo">Anmol Sharma</div>
+    <div class="logo">AS</div>
     <!-- <a href="#" class="nav-btn">
       <svg class="nav-btn__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 30">
         <rect class="nav-rect" width="40" height="2" x="8" y="8" fill="#242423" />
@@ -11,7 +11,8 @@
   </header>
   <div class="stage" id="smooth-content">
     <section class="intro slide--0" id="slide-0" style="height:100vh; position:relative;">
-      <app-matrix-background></app-matrix-background>
+      <!-- <app-matrix-background></app-matrix-background> -->
+       <app-circuit-background></app-circuit-background>
       <div class="overlay" style="z-index: 1;"></div>
       <div class="intro__content">
         <h1 class="intro__title">Front-End <br> Developer</h1>
@@ -31,6 +32,35 @@
     </section>
 
     <!-- Dynamic Slides -->
+        <section id="'slide-1'"
+      [ngClass]="'slide slide--1'">
+
+      <div class="col col--1">
+        <div class="col__content" [ngClass]="'col__content--1'">
+          <h2 class="col__content-title">
+            <span class="line__inner">About Me</span><br>
+            <!-- <span class="line__inner">hello</span> -->
+          </h2>
+          <div class="col__content-wrap">
+            <!-- <p class="col__content-txt"></p> -->
+            <a href="#" class="slide-link">
+              <div class="slide-link__circ"></div>
+              <div class="slide-link__line"></div>
+            </a>
+          </div>
+        </div>
+
+        <a [href]="'#slide-1'" class="slide__scroll-link">
+          <div class="slide__scroll-line"></div>
+        </a>
+      </div>
+
+      <div class="col col--2">
+        <div class="col__image-wrap">
+          <img class="img" src="../../../assets/images/intro.jpeg" />
+        </div>
+      </div>
+    </section>
     <!-- <section *ngFor="let slide of slides; let i = index" [id]="'slide-' + (i + 1)"
       [ngClass]="'slide slide--' + (i + 1)">
 

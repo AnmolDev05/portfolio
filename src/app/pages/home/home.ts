@@ -5,15 +5,17 @@ import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import { SplitText } from 'gsap/SplitText';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { CommonModule } from '@angular/common';
-import { Matrix } from '../../components/matrix/matrix';
+// import { Matrix } from '../../components/matrix/matrix';
 import { Footer } from '../../components/footer/footer';
 import { Navbar } from '../../components/navbar/navbar';
+import { Matrix } from '../../components/matrix/matrix';
+import { CircuitBackgroundComponent } from '../../components/circuit-background/circuit-background';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, SplitText, ScrollSmoother);
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule,Matrix,],
+  imports: [CommonModule,Matrix,CircuitBackgroundComponent],
   templateUrl: './home.html',
   styleUrls: ['./home.scss']
 })
