@@ -146,7 +146,7 @@
 
 
 <div class="theme-toggle" (click)="toggleTheme()">
-    <img [src]="isLight ? 'assets/images/dark.png' : 'assets/images/light.png'"
+    <img [src]="isLight ? 'assets/images/moon-dark.png' : 'assets/images/light.png'"
         [alt]="isLight ? 'Dark Mode' : 'Light Mode'" class="theme-icon">
 </div>
 
@@ -167,24 +167,27 @@
                         I blend design precision with clean, performant code to bring ideas to life on the web.
                     </div>
                 </div>
-
                 <!-- Menu items -->
-                <p (click)="scrollTo('section-about')" [class.active]="activeSection === 'section-about'">
-                    About Me
-                </p>
-                <p (click)="scrollTo('section-experience')" [class.active]="activeSection === 'section-experience'">
-                    Experience
-                </p>
-                <p (click)="scrollTo('section-project')" [class.active]="activeSection === 'section-project'">
-                    My Projects
-                </p>
+
+                <div class="menu-items">
+                    <p (click)="scrollTo('section-about')" [class.active]="activeSection === 'section-about'">
+                        About Me
+                    </p>
+                    <p (click)="scrollTo('section-experience')" [class.active]="activeSection === 'section-experience'">
+                        Experience
+                    </p>
+                    <p (click)="scrollTo('section-project')" [class.active]="activeSection === 'section-project'">
+                        My Projects
+                    </p>
+                </div>
+
                 <div class="social-links">
                     <a href="https://www.linkedin.com/in/" target="_blank"><img class="social-icon"
                             src="assets/images/linkedin.png" alt="LinkedIn"></a>
                     <a href="https://www.instagram.com/" target="_blank"><img class="social-icon"
                             src="assets/images/instagram.png" alt="Instagram"></a>
-                    <a href="https://x.com/" target="_blank"><img class="social-icon"
-                            src="assets/images/twitter.png" alt="Twitter"></a>
+                    <a href="https://x.com/" target="_blank"><img class="social-icon" src="assets/images/twitter.png"
+                            alt="Twitter"></a>
                     <a href="https://www.reddit.com/" target="_blank"><img class="social-icon"
                             src="assets/images/reddit.png" alt="Reddit"></a>
                 </div>
@@ -195,6 +198,9 @@
         <!-- Content -->
         <div class="content" #scrollContainer (scroll)="onScroll()">
 
+            <div class="heading-mobile">
+                About Me
+            </div>
             <div id="section-about" class="section section-about">
                 <p> I’m Anmol Sharma, a passionate Front-End Developer with over 4 years of experience crafting dynamic,
                     responsive, and user-friendly web applications. My expertise lies in Angular and modern front-end
@@ -210,7 +216,9 @@
                 <p> When I’m not building interfaces, you’ll find me exploring new tech trends, fine-tuning side
                     projects, or enjoying a good coffee while sketching out my next idea.</p>
             </div>
-
+            <div class="heading-mobile">
+                Experience
+            </div>
             <div id="section-experience" class="section section-experience">
                 <div class="experience-card">
                     <div class="exp-date">Nov 2024 - Present</div>
@@ -248,7 +256,9 @@
                 </div>
                 <!-- other experience cards similarly -->
             </div>
-
+            <div class="heading-mobile">
+                Project Work
+            </div>
             <div id="section-project" class="section section-project">
                 <div class="project-card">
                     <div class="macbook-frame">

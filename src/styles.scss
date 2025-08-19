@@ -23,7 +23,7 @@ body {
     --text-color: #000;
     --node-color: #637074;
     --line-color: #637074;
-    --overlay-color: rgba(255, 255, 255, 0.4);
+    --overlay-color: rgba(255, 255, 255, 0.7);
     /* white overlay */
     --scroll-track: #ddd;
     --scroll-thumb: #999;
@@ -52,6 +52,7 @@ body {
     width: 100%;
     height: 100vh;
     display: flex;
+    overflow: hidden;
     flex-wrap: nowrap;
     position: relative;
     z-index: 50;
@@ -68,6 +69,19 @@ body {
     top: 0;
     height: 100vh;
     overflow: auto;
+}
+
+.menu-inner {
+    padding: 0px 30px 0px;
+    margin-top: 70px;
+
+    @media (max-width: 1024px) {
+        padding: 50px 40px;
+    }
+
+    @media (max-width: 767px) {
+        padding: 30px 20px;
+    }
 }
 
 .menu p {
@@ -102,33 +116,37 @@ body {
 }
 
 .heading1 {
-    font-size: 56px;
-    font-weight: 300;
-    margin-bottom: 30px;
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+
 }
 
 .heading2 {
-    font-size: 22px;
+    font-size: 1.3rem;
     font-weight: 400;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+
 }
 
 .heading3 {
     font-size: 16px;
     font-weight: 200;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     line-height: 1.5;
 }
 
 /* ----------------- Content ----------------- */
 .content {
-    width: 55%;
+    width: 60%;
     height: 100%;
     overflow-y: auto;
     scroll-behavior: smooth;
-    padding: 30px 99px 0px 0px;
+    padding: 30px 100px 0px 0px;
     box-sizing: border-box;
     color: var(--text-color);
+    display: inline-block;
+    margin-top: 45px;
 }
 
 .section {
@@ -155,6 +173,7 @@ body {
     }
 
     .exp-date {
+        font-size: 0.9rem;
         font-weight: 500;
         flex: 1 1 100px;
     }
@@ -165,8 +184,9 @@ body {
 
         .exp-title {
             font-weight: 500;
-            font-size: 16px;
+            font-size: 0.9rem;
             margin-bottom: 5px;
+            line-height: 22px;
         }
 
         .exp-desc {
@@ -241,11 +261,11 @@ body {
 
 /* ----------------- Overlay ----------------- */
 .overlay {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: var(--overlay-color);
     z-index: 1;
     pointer-events: none;
@@ -274,44 +294,191 @@ body {
     scrollbar-color: var(--scroll-thumb) var(--scroll-track);
 }
 
+.project-card {
+    display: flex;
+    margin-bottom: 80px;
+    flex-wrap: wrap;
+
+    .project-desc {
+        flex: 1;
+        padding: 10px;
+
+        .project-title {
+            font-size: 18px;
+            font-weight: 500;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .project-text {
+            font-size: 14px;
+            font-weight: 300
+        }
+    }
+
+    // @media (max-width: 767px) {
+    //     flex-direction: column;
+
+    //     .project-desc {
+    //         width: 100%;
+    //     }
+    // }
+}
+
+.menu-items {
+    display: block;
+}
+
+.social-links {
+    display: flex;
+    justify-content: space-between;
+    max-width: 15.625rem; // 250px
+    margin-top: 4rem; // 80px
+}
+
+.social-links a {
+    display: inline-block;
+}
+
+.social-icon {
+    width: 2.5rem; // 40px
+    height: auto;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: scale(1.2); // increase size on hover
+    }
+}
+
+.heading-mobile {
+    display: none;
+}
+
 /* ----------------- Responsive Breakpoints ----------------- */
 
 /* Large Tablets / Laptops < 1200px */
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
     .heading1 {
-        font-size: 48px;
+        font-size: 46px;
+        margin-bottom: 10px;
     }
 
     .heading2 {
         font-size: 20px;
+        margin-bottom: 10px;
     }
 
     .heading3 {
-        font-size: 15px;
+        font-size: 1rem;
+        margin-bottom: 25px;
     }
 
     .menu {
         padding: 20px;
     }
 
+    .menu p {
+        font-size: 0.9rem;
+        font-weight: 300;
+        position: relative;
+        padding: 5px 10px 5px 17px;
+        cursor: pointer;
+        transition: color 0.3s, padding-left 0.3s ease;
+    }
+
+    .menu-inner {
+        padding: 0px 0px 0px 30px !important;
+        margin-top: 70px;
+        display: inline-block;
+    }
+
     .content {
-        padding: 20px;
+        padding: 0px 20px;
+        margin-top: 105px;
+        display: inline-block;
+    }
+
+    .section {
+        padding: 0px 45px 0px 0px;
+        margin-bottom: 20px;
+        line-height: 1.6;
+        display: inline-block;
+        font-size: 0.9rem;
+
+        p {
+            margin-top: 0px;
+        }
+    }
+
+    .macbook-frame .macbook-img {
+        max-width: 230px;
+    }
+
+    .macbook-frame .screen-content {
+        top: 9.5%;
+        left: 10%;
+        width: 80%;
+    }
+
+    .project-card {
+        display: flex;
+        margin-bottom: 80px;
+        flex-wrap: wrap;
+
+        .project-desc {
+            flex: 1;
+            padding: 10px;
+
+            .project-title {
+                font-size: 16px;
+                font-weight: 500;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+
+            .project-text {
+                font-size: 12px;
+                font-weight: 300
+            }
+        }
     }
 }
 
 /* Tablets < 1024px */
-@media (max-width: 1024px) {
+@media (max-width: 1035px) {
+    .menu-items {
+        display: none;
+        opacity: 0;
+    }
+
     .container {
         flex-direction: column;
         height: auto;
     }
 
-    .menu,
+    .menu {
+        width: 50%;
+        padding: 20px;
+        height: 50vh;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .social-links {
+        margin-top: 2rem;
+    }
+
     .content {
         width: 100%;
-        height: auto;
-        padding: 20px;
-        position: relative;
+        padding: 0px 50px;
+        margin-top: 40px;
+    }
+
+    .heading-mobile {
+        display: block;
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        font-weight: 600;
     }
 
     .heading1 {
@@ -328,11 +495,11 @@ body {
 
     .macbook-frame {
         display: block;
-        margin: 0 auto 30px;
+        margin: 0px;
     }
 
     .macbook-frame .macbook-img {
-        max-width: 300px;
+        max-width: 180px;
     }
 
     .macbook-frame .screen-content {
@@ -341,90 +508,157 @@ body {
         width: 80%;
         height: 70%;
     }
+
+    .project-card .project-desc {
+        flex: 1;
+        padding: 10px 50px;
+        max-width: 425px;
+    }
 }
 
-/* Mobile < 768px */
 @media (max-width: 767px) {
-    .heading1 {
-        font-size: 32px;
+    .menu-items {
+        display: none;
+        opacity: 0;
     }
 
-    .heading2 {
-        font-size: 16px;
+    .menu-inner {
+        padding: 0px !important;
+        margin-top: 70px;
+        display: inline-block;
     }
 
-    .heading3 {
-        font-size: 13px;
-        line-height: 1.4;
+    .heading-mobile {
+        display: block;
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        font-weight: 600;
     }
 
-    .menu p {
-        font-size: 14px;
-        padding-left: 15px;
-    }
-
-    .menu p:hover,
-    .menu p.active {
-        padding-left: 25px;
-    }
-
-    .menu p::before,
-    .menu p.active::before {
-        width: 15px;
-    }
-
-    .macbook-frame .macbook-img {
-        max-width: 220px;
-    }
-
-    .macbook-frame .screen-content {
-        top: 8%;
-        left: 8%;
-        width: 84%;
-        height: 60%;
-    }
-
-    .experience-card {
+    .container {
         flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .experience-card .exp-details {
-        width: 100%;
-        margin-top: 10px;
-    }
-}
-
-/* Extra Small Mobile < 480px */
-@media (max-width: 480px) {
-    .heading1 {
-        font-size: 28px;
-    }
-
-    .heading2 {
-        font-size: 14px;
-    }
-
-    .heading3 {
-        font-size: 12px;
-    }
-
-    .macbook-frame .macbook-img {
-        max-width: 180px;
-    }
-
-    .macbook-frame .screen-content {
-        top: 7%;
-        left: 7%;
-        width: 86%;
-        height: 55%;
-    }
-
-    .content {
-        padding: 10px 15px;
+        height: auto;
     }
 
     .menu {
-        padding: 15px;
+        width: 100%;
+        padding: 20px;
+        height: 55vh;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .social-links {
+        margin-top: 2rem;
+    }
+
+    .content {
+        width: 100%;
+        padding: 0px 20px;
+        margin-top: 40px;
+    }
+
+    .section {
+        padding: 0px;
+        margin-bottom: 20px;
+        line-height: 1.6;
+        display: inline-block;
+        font-size: 0.8rem;
+        width: 100%;
+
+        p {
+            margin-top: 0px;
+        }
+    }
+
+
+    .experience-card {
+        padding: 0px;
+    }
+
+    .experience-card .exp-details .exp-desc {
+        font-size: 0.8rem;
+        font-weight: 300;
+        line-height: 1.5;
+    }
+
+    .heading1 {
+        font-size: 2rem;
+    }
+
+    .heading2 {
+        font-size: 1.2rem;
+    }
+
+    .heading3 {
+        font-size: 0.9rem;
+    }
+
+    .macbook-frame .macbook-img {
+        max-width: 160px;
+    }
+
+
+    .macbook-frame {
+        display: block;
+        margin: 0px 20px;
+    }
+
+
+    .macbook-frame .screen-content {
+        top: 10%;
+        left: 10%;
+        width: 80%;
+        height: 70%;
+    }
+
+    @media (max-width: 480px) {
+
+        .macbook-frame .macbook-img {
+            max-width: 160px;
+        }
+
+        .macbook-frame {
+            display: block;
+            margin: 0px auto;
+        }
+
+
+        .macbook-frame .screen-content {
+            top: 10%;
+            left: 10%;
+            width: 80%;
+            height: 70%;
+        }
+
+
+        .project-card .project-title {
+            text-align: center !important;
+        }
+
+        .project-card .project-desc {
+            flex: 1;
+            text-align: center;
+            padding: 10px 0px;
+            max-width: 425px;
+        }
+
+        .project-card {
+            display: flex;
+            margin-bottom: 80px;
+            flex-direction: column;
+        }
+    }
+
+
+    .project-card .project-title {
+        margin-top: 5px;
+        text-align: left;
+    }
+
+    .project-card .project-desc {
+        flex: 1;
+        font-size: 0.7rem;
+        padding: 0px 0px;
     }
 }
