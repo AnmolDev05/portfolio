@@ -36,6 +36,9 @@ export class Main {
   isLight : any = false;
 
   ngOnInit(): void {
+  // run these to build docs 
+  // ng build --configuration production --output-path docs --base-href /portfolio/
+  // npm run build:docs
     const saved = localStorage.getItem('theme');
     if (saved === 'light') {
       this.setLight(true);
