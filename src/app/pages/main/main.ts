@@ -4,7 +4,7 @@ import { Matrix } from '../../components/matrix/matrix';
 
 @Component({
   selector: 'app-main',
-  imports: [CircuitBackgroundComponent,Matrix],
+  imports: [CircuitBackgroundComponent],
   templateUrl: './main.html',
   styleUrl: './main.scss'
 })
@@ -42,6 +42,7 @@ export class Main {
     } else if (saved === 'dark') {
       this.setLight(false);
     } else {
+      this.setLight(false);
       // follow OS default if user hasn't chosen
       const prefersDark =
         window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;

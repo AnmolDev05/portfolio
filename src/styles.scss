@@ -295,7 +295,9 @@ body {
 }
 
 .project-card {
+    text-decoration: none;
     display: flex;
+    color:var(--text-color) !important;
     margin-bottom: 80px;
     flex-wrap: wrap;
 
