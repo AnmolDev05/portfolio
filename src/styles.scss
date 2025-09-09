@@ -19,14 +19,14 @@ body {
 
 /* Light theme */
 :root.light-theme {
-    --bg-color: #E8EBF7;
+    --bg-color: #F0BCD4;
     --text-color: #000;
-    --node-color: #637074;
-    --line-color: #637074;
-    --overlay-color: rgba(255, 255, 255, 0.7);
+    --node-color: #DA4167;
+    --line-color: #DA4167;
+    --overlay-color: rgba(255, 255, 255, 0.5);
     /* white overlay */
-    --scroll-track: #ddd;
-    --scroll-thumb: #999;
+    --scroll-track: #F0BCD4;
+    --scroll-thumb: #DA4167;
 }
 
 :root {
